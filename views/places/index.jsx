@@ -5,13 +5,13 @@ const index = (data) => {
   let placesFormatted = data.places.map((places) => {
     return (
       <div className="col-sm-6">
-        <h2>{places.name}</h2>
-        <p className="text-center">
-            {places.cuisines}
-        </p>
+        <h2>
+          <a href={`/places/${index}`}>{places.name}</a>
+        </h2>
+        <p className="text-center">{places.cuisines}</p>
         <img src={places.pic} alt={places.name} />
         <p className="text-center">
-            Located in {places.city}, {places.state}
+          Located in {places.city}, {places.state}
         </p>
       </div>
     );
