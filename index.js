@@ -1,6 +1,6 @@
 require('dotenv').config()
 const express = require('express');
-const app = express()
+const app = express();
 
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
