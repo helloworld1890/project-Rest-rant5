@@ -13,7 +13,22 @@ const Def = (html) => {
         ></link>
         <link rel="stylesheet" href="./css/style.css" />
       </head>
-      <body>{html.children}</body>
+      <body>
+        <nav>
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/places">PLaces</a>
+            </li>
+            <li>
+              <a href="/places/new">Add a Place</a>
+            </li>
+          </ul>
+        </nav>
+        {html.children}
+      </body>
     </html>
   );
 };
