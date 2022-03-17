@@ -20,7 +20,7 @@ const Def = (html) => {
               <a href="/">Home</a>
             </li>
             <li>
-              <a href="/places">PLaces</a>
+              <a href="/places">Places</a>
             </li>
             <li>
               <a href="/places/new">Add a Place</a>
