@@ -21,7 +21,9 @@ function show(data) {
         </div>
         <div>
           <h2>description</h2>
-          <p>No description</p>
+          <p>{data.place.cuisines}</p>
+          <p>{data.place.city}</p>
+          <p>{data.place.state}</p>
         </div>
         <div>
           <h2>Comment</h2>
