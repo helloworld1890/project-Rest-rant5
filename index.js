@@ -15,9 +15,7 @@ mongoose.connect(process.env.MONGO_URI, {
     useUnifiedTopology: true
   })
 
-  module.exports.Place = require('./models/places')
-
-
+module.exports.Place = require('./models/places')
 app.get('/', (req, res) => {
     res.render('home');
 })
@@ -26,6 +24,5 @@ app.get('*', (req, res) => {
     res.render('error404');
     // res.status(404).send('<h1>404 Page</h1>')
 })
-
 
 app.listen(process.env.PORT)
