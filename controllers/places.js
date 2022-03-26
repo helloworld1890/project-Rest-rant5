@@ -3,7 +3,8 @@ const router = require("express").Router();
 const db = require('../models')
 
 router.get('/', (req, res) => {
-    db.Place.find().then((places) => {
+  db.Place.find().then((places) => {
+    console.log(places);
       res.render('places/index', { places })
     }).catch(err => {
       console.log(err) 
@@ -12,6 +13,17 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  if (!req.body.pic) {
+        // Default image if one is not provided
+        req.body.pic = undefined
+      }
+      if (!req.body.city) {
+        req.body.city = undefined
+      }
+      if (!req.body.state) {
+        req.body.state = undefined
+      }  
+
   db.Place.create(req.body)
   .then(() => {
       res.redirect('/places')
