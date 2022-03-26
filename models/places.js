@@ -1,10 +1,6 @@
-require('dotenv').config()
 const mongoose = require('mongoose')
 
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true, 
-  useUnifiedTopology: true
-})
+
 
 
 const placeSchema = new mongoose.Schema({
@@ -16,7 +12,6 @@ const placeSchema = new mongoose.Schema({
   founded: Number
 })
 
-module.exports.Place = require('./places')
 module.exports = mongoose.model( 'Place' , placeSchema)
 
 // module.exports = [{

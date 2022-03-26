@@ -1,9 +1,9 @@
 const router = require("express").Router();
 //const places = require("../models/places");
-const db = require('../models/places')
+const db = require('../models')
 
 router.get('/', (req, res) => {
-    db.find().then((places) => {
+    db.Place.find().then((places) => {
       res.render('places/index', { places })
     }).catch(err => {
       console.log(err) 
@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  db.create(req.body)
+  db.Place.create(req.body)
   .then(() => {
       res.redirect('/places')
   })
@@ -27,7 +27,7 @@ router.get("/new", (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  db.findById(req.params.id)
+  db.Place.findById(req.params.id)
   .then(place => {
       res.render('places/show', { place })
   })
