@@ -54,6 +54,22 @@ function show(data) {
           <h2>Comment</h2>
          {comments}
         </div>
+        
+        <form method="POST" action={`/${data.id}/comment`}>
+          <div>
+          <label htmlFor="author">Author</label>
+          <input type="text"></input>
+          </div>
+          <div>
+            <label htmlFor="rant">Comment</label>
+            <textarea name="Comment" id="" cols="30" rows="10"></textarea>
+          </div>
+          <div>
+            <label htmlFor="rate">Rating</label>
+            <input type="number" step="0.5" />
+          </div>
+          <input className="btn btn-primary" type="submit" value="Submit" />
+        </form>
       </main>
       </Def>
   );
