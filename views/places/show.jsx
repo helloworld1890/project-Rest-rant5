@@ -58,15 +58,19 @@ function show(data) {
         <form method="POST" action={`/places/${data.place.id}/comment`}>
           <div>
           <label htmlFor="author">Author</label>
-          <input type="text"></input>
+          <input type="text" name="author" id="author"></input>
           </div>
           <div>
-            <label htmlFor="rant">Comment</label>
-            <textarea name="Comment" id="" cols="30" rows="10"></textarea>
+            <label htmlFor="content">Content</label>
+            <textarea name="content" type="text" id="content" cols="30" rows="10"></textarea>
           </div>
           <div>
-            <label htmlFor="rate">Rating</label>
-            <input type="number" step="0.5" />
+            <label htmlFor="rant">rant</label>
+            <input name="rant" type="checkbox" id="rant" />
+          </div>
+          <div>
+            <label htmlFor="stars">Rating</label>
+            <input type="number" name="stars" id="stars" step="0.5" />
           </div>
           <input className="btn btn-primary" type="submit" value="Submit" />
         </form>
