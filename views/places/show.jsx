@@ -55,7 +55,7 @@ function show(data) {
          {comments}
         </div>
         
-        <form method="POST" action={`/${data.id}/comment`}>
+        <form method="POST" action={`/places/${data.place.id}/comment`}>
           <div>
           <label htmlFor="author">Author</label>
           <input type="text"></input>
