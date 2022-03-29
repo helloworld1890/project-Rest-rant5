@@ -65,9 +65,9 @@ router.get("/:id/edit", (req, res) => {
 
 router.post('/:id/comment', (req, res) => {
   req.body.rant = req.body.rant ? true : false;
-  req.body.rant = req.body.stars ? req.body.stars : undefined;
-  req.body.rant = req.body.author ? req.body.author : undefined;
-  req.body.rant = req.body.content ? req.body.content : undefined;
+  req.body.stars = req.body.stars ? req.body.stars : undefined;
+  req.body.author = req.body.author ? req.body.author : undefined;
+  req.body.content = req.body.content ? req.body.content : undefined;
   db.Place.findById(req.params.id)
   .then(place => {
       db.Comment.create(req.body)
