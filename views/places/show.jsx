@@ -14,16 +14,16 @@ function show(data) {
   )
   if (data.place.comments.length) {
     let sumRatings = data.place.comments.reduce((tot, c) => {
-      return (
-        <div className="border">
-          <h2 className="rant">{c.rant ? 'Rant! 😡' : 'Rave! 😻'}</h2>
-          <h4>{c.content}</h4>
-          <h3>
-            <stong>- {c.author}</stong>
-          </h3>
-          <h4>Rating: {c.stars}</h4>
-        </div>
-      )
+      // return (
+      //   <div className="border">
+      //     <h2 className="rant">{c.rant ? 'Rant! 😡' : 'Rave! 😻'}</h2>
+      //     <h4>{c.content}</h4>
+      //     <h3>
+      //       <stong>- {c.author}</stong>
+      //     </h3>
+      //     <h4>Rating: {c.stars}</h4>
+      //   </div>
+      // )
       return tot + c.stars
     }, 0)
     let averageRating = Math.round(sumRatings / data.place.comments.length)
